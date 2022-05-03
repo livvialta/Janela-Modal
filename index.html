@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="formulario.js"></script>
+    <script type="text/php" src="config.php"></script>
+    <title>Formulário</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to right, #0C7BB3, #F2BAE8);
+        }
+        
+        .box {
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 15px;
+            width: 20%;
+        }
+        
+        fieldset {
+            border: 3px solid dodgerblue;
+        }
+        
+        legend {
+            border: 1px solid dodgerblue;
+            padding: 10px;
+            text-align: center;
+            background-color: dodgerblue;
+            border-radius: 8px;
+        }
+        
+        .inputBox {
+            position: relative;
+        }
+        
+        .inputUser {
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            outline: none;
+            color: white;
+            font-size: 15px;
+            width: 100%;
+            letter-spacing: 2px;
+        }
+        
+   
+        #submit{
+            background-image: linear-gradient(to right, #7339AB, dodgerblue, #7339AB);
+            width: 100%;
+            border: none;
+            padding: 15px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.5s ease;
+        }
+        
+        #submit:hover{
+            background-image: linear-gradient(to right, #7339AB, dodgerblue, #7339AB);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <form method="post" action="config.php" >
+            <fieldset>
+                <legend><b> Formulário </b> </legend> <br>
+
+                <div class="inputBox">
+                    <input type="text" name="nome" id="nome" class="inputUser" required>
+                    <label for="nome">Nome Completo</label>
+
+                </div>
+                <br> <br>
+                <div class="inputBox">
+                    <input type="text" name="cpf" id="cpf" maxlength="11" onblur="TestaCPF(this.value)" class="inputUser" required>
+                    <label for="cpf">CPF</label>
+
+                </div>
+                <br> <br>
+                <div class="inputBox">
+                    <input type="email" name="email" id="email" class="inputUser" onblur="validarEmail()" onfocus="redefinirMsg()" required />
+                    <label for="email">E-mail</label>
+                    <span id="error-email"></span>
+
+                </div>
+                <br> <br>
+                <div class="inputBox">
+                    <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+                    <label for="telefone">Telefone</label>
+
+                </div>
+                <br> <br>
+                <div class="inputBox">
+                    <input type="text" name="cep" id="cep" class="inputUser" required/>
+                    <label for="cep">CEP</label>
+
+                </div>
+                <br> <br>
+                <div>
+                    <input type="text" name="endereco" id="endereco" class="inputUser" required/>
+                    <label for="endereco">Endereço</label>
+
+                </div>
+                <br> <br>
+                <div>
+                    <input type="text" name="numero" id="numero" class="inputUser" required/>
+                    <label for="numero">Número</label>
+
+                </div>
+                <br> <br>
+                <div>
+                    <input type="text" name="complemento" id="complemento" class="inputUser" />
+                    <label for="complemento">Complemento</label>
+
+                </div>
+                <br> <br>
+                <div>
+                    <input type="text" name="bairro" id="bairro" type="text" class="inputUser" required/>
+        <label for="bairro ">Bairro</label>
+
+    </div>
+    <br> <br>
+    <div> 
+       
+		<select id="estado" required>
+            <option selected disabled value=""></option>
+			<option value="AC ">Acre</option>
+			<option value="AL ">Alagoas</option>
+			<option value="AP ">Amapá</option>
+			<option value="AM ">Amazonas</option>
+			<option value="BA ">Bahia</option>
+			<option value="CE ">Ceará</option>
+			<option value="DF ">Distrito Federal</option>
+			<option value="ES ">Espírito Santo</option>
+			<option value="GO ">Goiás</option>
+			<option value="MA ">Maranhão</option>
+			<option value="MT ">Mato Grosso</option>
+			<option value="MS ">Mato Grosso do Sul</option>
+			<option value="MG ">Minas Gerais</option>
+			<option value="PA ">Pará</option>
+			<option value="PB ">Paraíba</option>
+			<option value="PR ">Paraná</option>
+			<option value="PE ">Pernambuco</option>
+			<option value="PI ">Piauí</option>
+			<option value="RJ ">Rio de Janeiro</option>
+			<option value="RN ">Rio Grande do Norte</option>
+			<option value="RS ">Rio Grande do Sul</option>
+			<option value="RO ">Rondônia</option>
+			<option value="RR ">Roraima</option>
+			<option value="SC ">Santa Catarina</option>
+			<option value="SP ">São Paulo</option>
+			<option value="SE ">Sergipe</option>
+			<option value="TO ">Tocantins</option>
+		</select>
+        <br> 
+        <label for="estado">Estado</label>
+    </div>
+<br><br>
+
+          <input type="submit" name="submit" id="submit">
+            </fieldset>
+
+        </fieldset>
+    </form>
+    </div>
+ 
+
+
+</body>
+
+</html>
